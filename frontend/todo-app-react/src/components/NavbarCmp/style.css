@@ -1,0 +1,12 @@
+.navbarclass{
+    border-radius: 10px ;
+    background-color: rgb(27, 27, 27);
+    padding: 20px 15px 20px 15px;
+}
+.navbarclass a{
+    color: white;
+}
+.navbarclass a:hover{
+    color: white;
+    text-decoration: none;
+}

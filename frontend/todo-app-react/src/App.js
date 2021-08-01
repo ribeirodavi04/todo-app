@@ -1,10 +1,10 @@
 import './App.css';
-import { Button } from 'react-bootstrap';
+import Routes from './components/Routes';
 
 function App() {
   return (
     <div className="App">
-      <Button>ola mundo</Button>
+      <Routes />
     </div>
   );
 }
