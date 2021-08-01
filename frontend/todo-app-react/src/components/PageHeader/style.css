@@ -1,5 +1,5 @@
 .header-class{
-    border-bottom: 1.5px solid gray;
+    border-bottom: 1.5px solid rgba(128, 128, 128, 0.205);
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
