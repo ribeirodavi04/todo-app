@@ -17,7 +17,7 @@ const NavbarCmp = () => {
                         <Navbar.Collapse id="navmain">
                             <Nav className="ml-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                                <Nav.Link><Link to="/">About</Link></Nav.Link>
+                                <Nav.Link><Link to="/AboutUs">About</Link></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
