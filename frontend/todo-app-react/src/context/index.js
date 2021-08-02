@@ -1,4 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
+
 export const ContextApi = createContext();
 
 const Context = (props) => {
@@ -7,28 +9,27 @@ const Context = (props) => {
     const [taskList, setTaskList] = useState();
 
     useEffect(()=>{
-        const getTasks = async()=>{
-            fetch(url)
-                .then(res=>res.json())
-                .then(res=>setTaskList(res));
+        const getTasks = ()=>{
+            axios.get(url).then(res=>setTaskList(res.data)).catch(err=>console.log(err));
+
         }
         getTasks();
     }, [taskList])
 
     
-    const addTask = async(rDescription)=>{
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({description: rDescription, done: false}),
-            headers:{
-
-                'content-type': 'application/json'
-            }
-        }).then((data)=> {return data}).then((data)=>console.log(data))
+    const addTask = (rDescription)=>{
+        axios.post(url, {description: rDescription}).catch(err=>console.log(err));
     }
 
+    const deleteTask = (task)=>{
+        axios.delete(`${url}${task}`).catch(err=>console.log(err));
+    }
+
+    const alterTask = (task)=>{
+        //axios.put(`${url}${task}`)
+    }
     return (
-        <ContextApi.Provider value={{taskList, addTask}}>
+        <ContextApi.Provider value={{taskList, addTask, deleteTask}}>
             {props.children}
         </ContextApi.Provider>
     );
