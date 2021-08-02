@@ -11,7 +11,7 @@ const NavbarCmp = () => {
                 <Navbar expand= "lg" variant="dark" className="navbarclass">
                     <Container>
                         <Navbar.Brand href="/home">
-                            <span><ImCalendar /> Todo-app</span>
+                            <span><ImCalendar /> TodoApp</span>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="navmain" />
                         <Navbar.Collapse id="navmain">

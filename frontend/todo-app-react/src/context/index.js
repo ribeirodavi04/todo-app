@@ -10,7 +10,7 @@ const Context = (props) => {
 
     useEffect(()=>{
         const getTasks = ()=>{
-            axios.get(url).then(res=>setTaskList(res.data)).catch(err=>console.log(err));
+            axios.get(`${url}?sort=-createdA`).then(res=>setTaskList(res.data)).catch(err=>console.log(err));
 
         }
         getTasks();
