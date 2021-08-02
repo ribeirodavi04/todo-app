@@ -16,8 +16,8 @@ const NavbarCmp = () => {
                         <Navbar.Toggle aria-controls="navmain" />
                         <Navbar.Collapse id="navmain">
                             <Nav className="ml-auto">
-                                <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                                <Nav.Link><Link to="/AboutUs">About</Link></Nav.Link>
+                                <Nav.Item><Link to="/">Home</Link></Nav.Item>
+                                <Nav.Item><Link to="/AboutUs">About</Link></Nav.Item>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

@@ -21,6 +21,7 @@ const Context = (props) => {
             method: 'POST',
             body: JSON.stringify({description:'p', done: false}),
             headers:{
+
                 'content-type': 'application/json'
             }
         }).then((data)=> {return data}).then((data)=>console.log(data))
