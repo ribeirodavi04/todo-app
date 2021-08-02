@@ -16,10 +16,10 @@ const Context = (props) => {
     }, [taskList])
 
     
-    const addTask = async()=>{
+    const addTask = async(rDescription)=>{
         fetch(url, {
             method: 'POST',
-            body: JSON.stringify({description:'p', done: false}),
+            body: JSON.stringify({description: rDescription, done: false}),
             headers:{
 
                 'content-type': 'application/json'
