@@ -14,15 +14,15 @@ const TodoList = (props) => {
         
         <div className="d-flex list-item">
             <div>
-                <h3 style={style}>
+                <h4 style={style}>
                     {props.description }
-                </h3> 
+                </h4> 
             </div>
 
             <div className="ml-auto">
                 <Button className="mr-2" variant="success" onClick={()=>doneTask(props.id)}><ImCheckmark/></Button> 
                 <Button className="mr-2" variant="warning" onClick={()=>pendingTask(props.id)}><FaRedoAlt/></Button>
-                <Button className="mr-2" variant="danger" onClick={()=>deleteTask(props.id)}><ImBin/></Button>
+                <Button className="" variant="danger" onClick={()=>deleteTask(props.id)}><ImBin/></Button>
                 
             </div>
             
