@@ -16,7 +16,7 @@ const Home = () => {
             <TodoForm/>
             <h2>Lista</h2>
             {
-                taskList && (taskList.map((item)=><TodoList description={item.description} key={item._id} id={item._id}/>))
+                taskList && (taskList.map((item)=><TodoList description={item.description} key={item._id} id={item._id} done={item.done}/>))
             }
         </Container>
     );

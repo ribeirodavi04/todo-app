@@ -25,11 +25,20 @@ const Context = (props) => {
         axios.delete(`${url}${task}`).catch(err=>console.log(err));
     }
 
-    const alterTask = (task)=>{
-        //axios.put(`${url}${task}`)
+    const doneTask = (id)=>{
+        axios.put(`${url}${id}`,{...taskList, done: true});
+
     }
+    
+    const pendingTask = (id)=>{
+        axios.put(`${url}${id}`,{...taskList, done: false});
+
+    }
+    //const alterTask = (task)=>{
+        //axios.put(`${url}${task}`)
+    //}
     return (
-        <ContextApi.Provider value={{taskList, addTask, deleteTask}}>
+        <ContextApi.Provider value={{taskList, addTask, deleteTask, doneTask, pendingTask}}>
             {props.children}
         </ContextApi.Provider>
     );
