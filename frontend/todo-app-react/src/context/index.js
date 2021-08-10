@@ -7,16 +7,18 @@ const Context = (props) => {
 
     const url = "http://localhost:3000/api/todos/";
     const [taskList, setTaskList] = useState();
+    const [listSearch, setListSearch]= useState();
+    const [searchV, setSearchV] = useState(false);
 
-    useEffect(()=>{
-        const getTasks = ()=>{
-            axios.get(`${url}?sort=-createdA`).then(res=>setTaskList(res.data)).catch(err=>console.log(err));
-
-        }
-        getTasks();
-    }, [taskList])
-
+    const getTasks = ()=>{
+        axios.get(`${url}?sort=-createdA`).then(res=>setTaskList(res.data)).catch(err=>console.log(err));
+            
+    }
     
+    useEffect(()=>{  
+        getTasks();
+    }, [taskList]);
+
     const addTask = (rDescription)=>{
         axios.post(url, {description: rDescription}).catch(err=>console.log(err));
     }
@@ -34,11 +36,15 @@ const Context = (props) => {
         axios.put(`${url}${id}`,{...taskList, done: false});
 
     }
-    //const alterTask = (task)=>{
-        //axios.put(`${url}${task}`)
-    //}
+
+    const search = (description) =>{
+        setSearchV(true)
+        axios.get(`${url}?sort=-createdA&description__regex=/${description}/`).then((res)=>{setListSearch(res.data)}).catch(err=>console.log(err));
+    }
+
+
     return (
-        <ContextApi.Provider value={{taskList, addTask, deleteTask, doneTask, pendingTask}}>
+        <ContextApi.Provider value={{ taskList, addTask, deleteTask, doneTask, pendingTask, search, listSearch, searchV, setSearchV }}>
             {props.children}
         </ContextApi.Provider>
     );
