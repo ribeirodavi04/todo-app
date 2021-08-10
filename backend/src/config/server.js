@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(allowCors);
 
-app.listen('3000', function(){
+app.listen('3030', function(){
     console.log('server is running');
 
 });
